@@ -1,0 +1,115 @@
+{% load static  %}
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+  <ul class="nav">
+    <li class="nav-item nav-profile">
+      <a href="#" class="nav-link">
+        <div class="profile-image">
+          <img class="img-xs rounded-circle" src="{% static 'images/dashboard/Tony.jpg' %}" alt="profile image">
+        </div>
+        <div class="text-wrapper">
+          <p class="profile-name">Tony</p>
+          <p class="designation">Administrator</p>
+        </div>
+        <div class="icon-container">
+          <i class="icon-bubbles text-white"></i>
+          <div class="dot-indicator bg-danger"></div>
+        </div>
+      </a>
+    </li>
+    <li class="nav-item nav-category">
+      <span class="nav-link">Dashboard</span>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'home' %}">
+        <span class="menu-title">Dashboard</span>
+        <i class="icon-screen-desktop menu-icon text-white"></i>
+      </a>
+    </li>
+    <li class="nav-item nav-category"><span class="nav-link">Shop Manage</span></li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'orders' %}" >
+        <span class="menu-title">Orders</span>
+        <i class="icon-layers menu-icon  text-white"></i>
+      </a>
+    </li>
+     <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+        <span class="menu-title">Products</span>
+        <i class="icon-bag menu-icon  text-white"></i>
+      </a>
+      <div class="collapse" id="auth">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="{% url 'products' %}">Inventory </a></li>
+          <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html">Collections </a></li>
+          <li class="nav-item"> <a class="nav-link" href="{% url 'category' %}">Categories</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{% url 'tags' %}">Tags </a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'customers' %}">
+        <span class="menu-title">Customers</span>
+        <i class="icon-people menu-icon  text-white"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"  href="{% url 'payment' %}" >
+        <span class="menu-title">Promotions</span>
+        <i class="icon-heart menu-icon  text-white"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'suppliers' %}">
+        <span class="menu-title">Suppliers</span>
+        <i class="icon-book-open menu-icon text-white"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'shipping' %}">
+        <span class="menu-title">Shipping Companies</span>
+        <i class="icon-plane menu-icon  text-white"></i>
+      </a>
+    </li>
+     <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#analytics" aria-expanded="false" aria-controls="auth">
+        <span class="menu-title">Analytics</span>
+        <i class="icon-graph menu-icon  text-white"></i>
+      </a>
+      <div class="collapse" id="analytics">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="{% url 'products' %}">Dashboard </a></li>
+          <li class="nav-item"> <a class="nav-link" href="{% url 'tags' %}">Reports </a></li>
+          <li class="nav-item"> <a class="nav-link" href="{% url 'category' %}">Live View</a></li>
+        </ul>
+      </div>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+        <span class="menu-title">Marketing</span>
+        <i class="icon-chart menu-icon text-white"></i>
+      </a>
+      <div class="collapse" id="ui-basic">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="{% url 'products' %}">Overview</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{% url 'tags' %}">Campaigns</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{% url 'category' %}">Automations</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item nav-category"><span class="nav-link">Online Store</span></li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#store" aria-expanded="false" aria-controls="ui-basic">
+        <span class="menu-title">Store</span>
+        <i class="icon-handbag menu-icon text-white"></i>
+      </a>
+      <div class="collapse" id="store">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="{% url 'products' %}">Preferences</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{% url 'tags' %}">Pages</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{% url 'category' %}">Blog posts</a></li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</nav>
