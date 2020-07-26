@@ -1,0 +1,142 @@
+{% extends 'cms/index.html' %}
+{% load static %}
+{% block content %}
+<div class="main-panel">
+    <div class="content-wrapper">
+        <!-- Quick Action Toolbar Starts-->
+         <a href="{% url 'products' %}" type="button" class="btn px-0"><i class="icon-arrow-left mr-2"></i> Suppliers</a>
+        <h3 class="display-3">Add Supplier</h3>
+        <div class="row quick-action-toolbar">
+            <div class="col-8 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Basic form elements</h4>
+                    <p class="card-description"> Basic form elements </p>
+                    <form class="forms-sample">
+                      <div class="form-group">
+                        <label for="exampleInputName1">Name</label>
+                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail3">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword4">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleSelectGender">Gender</label>
+                        <select class="form-control" id="exampleSelectGender">
+                          <option>Male</option>
+                          <option>Female</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label>File upload</label>
+                        <input type="file" name="img[]" class="file-upload-default">
+                        <div class="input-group col-xs-12">
+                          <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                          <span class="input-group-append">
+                            <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputCity1">City</label>
+                        <input type="text" class="form-control" id="exampleInputCity1" placeholder="Location">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleTextarea1">Textarea</label>
+                        <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                      <button class="btn btn-light">Cancel</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Input size</h4>
+                    <p class="card-description"> Add classes like <code>.form-control-lg</code> and <code>.form-control-sm</code>. </p>
+                    <div class="form-group">
+                      <label>Large input</label>
+                      <input type="text" class="form-control form-control-lg" placeholder="Username" aria-label="Username">
+                    </div>
+                    <div class="form-group">
+                      <label>Default input</label>
+                      <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                    </div>
+                    <div class="form-group">
+                      <label>Small input</label>
+                      <input type="text" class="form-control form-control-sm" placeholder="Username" aria-label="Username">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Select size</h4>
+                    <p class="card-description"> Add classes like <code>.form-control-lg</code> and <code>.form-control-sm</code>. </p>
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect1">Large select</label>
+                      <select class="form-control form-control-lg" id="exampleFormControlSelect1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect2">Default select</label>
+                      <select class="form-control" id="exampleFormControlSelect2">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect3">Small select</label>
+                      <select class="form-control form-control-sm" id="exampleFormControlSelect3">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        <div class="col-4 grid-margin">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="display-4">Supplier Staus</h4>
+                    <p class="card-description">Active  </p>
+                    <hr />
+                    <h4 class="display-5">Deactivate Supplier Status</h4>
+                      <div class="form-group">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input">Deactivate Supplier </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+            
+        </div>      
+    </div>
+    <!-- content-wrapper ends -->
+    <!-- partial:partials/_footer.html -->
+    {% include 'cms/partials/footer.html' %}
+    <!-- partial -->
+</div>
+{% endblock  %}

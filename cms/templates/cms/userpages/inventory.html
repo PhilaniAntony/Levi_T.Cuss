@@ -4,6 +4,32 @@
 {% block content %}
 <div class="main-panel">
           <div class="content-wrapper">
+           <!-- Quick Action Toolbar Starts-->
+            <div class="row quick-action-toolbar">
+              <div class="col-md-12 grid-margin">
+                <div class="card">
+                  <div class="card-header d-block d-md-flex">
+                    <h5 class="mb-0">Quick Actions</h5>
+                    <p class="ml-auto mb-0">How are your active users trending overtime?<i class="icon-bulb"></i></p>
+                  </div>
+                  <div class="d-md-flex row m-0 quick-action-btns" role="group" aria-label="Quick action buttons">
+                    <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
+                      <a href="{% url 'add_product' %}" type="button" class="btn px-0"><i class="icon-plus mr-2"></i> Add Product</a>
+                    </div>
+                    <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
+                      <a href="{% url 'add_payment' %}"  type="button" class="btn px-0"><i class="icon-credit-card mr-2"></i>Add Payment</a>
+                    </div>
+                    <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
+                      <a href="{% url 'add_supplier' %}" type="button" class="btn px-0"> <i class="icon-user-following mr-2"></i> Add Supplier</a>
+                    </div>
+                    <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
+                      <a href="{% url 'add_shipping' %}" type="button" class="btn px-0"><i class="icon-plane mr-2"></i> Add Shipping</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Quick Action Toolbar Ends-->
             <div class="row">
               <div class="col-md-12 grid-margin">
                 <div class="card">
@@ -11,39 +37,39 @@
                     <div class="row">
                       <div class="col-md-12">
                         <div class="d-sm-flex align-items-baseline report-summary-header">
-                          <h5 class="font-weight-semibold">Sales Summary</h5> <span class="ml-auto">Updated Report</span> <button class="btn btn-icons border-0 p-2"><i class="icon-refresh"></i></button>
+                          <h5 class="font-weight-semibold">Inventory  Summary</h5> <span class="ml-auto">Updated Report</span> <button class="btn btn-icons border-0 p-2"><i class="icon-refresh"></i></button>
                         </div>
                       </div>
                     </div>
                     <div class="row report-inner-cards-wrapper">
                       <div class=" col-md -6 col-xl report-inner-card">
                         <div class="inner-card-text">
-                          <span class="report-title">SALES</span>
-                          <h4>$32123</h4>
-                          <span class="report-count"> 2 Reports</span>
+                          <span class="report-title">TOP SELLING</span>
+                          <h4>$29 123</h4>
+                          <span class="report-count"> 5 Reports</span>
                         </div>
                         <div class="inner-card-icon bg-success">
-                          <i class="icon-basket-loaded"></i>
+                          <i class="icon-magnet"></i>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-xl report-inner-card">
+                        <div class="inner-card-text">
+                          <span class="report-title">LEAST SELLING</span>
+                          <h4>$3 000</h4>
+                          <span class="report-count"> 1 Reports</span>
+                        </div>
+                        <div class="inner-card-icon bg-danger">
+                          <i class="icon-ghost"></i>
                         </div>
                       </div>
                       <div class="col-md-6 col-xl report-inner-card">
                         <div class="inner-card-text">
                           <span class="report-title">RETURNS</span>
-                          <h4>5,458</h4>
-                          <span class="report-count"> 3 Reports</span>
-                        </div>
-                        <div class="inner-card-icon bg-danger">
-                          <i class=" icon-basket"></i>
-                        </div>
-                      </div>
-                      <div class="col-md-6 col-xl report-inner-card">
-                        <div class="inner-card-text">
-                          <span class="report-title">ORDERS</span>
-                          <h4>2650</h4>
+                          <h4>136</h4>
                           <span class="report-count"> 5 Reports</span>
                         </div>
                         <div class="inner-card-icon bg-warning">
-                          <i class="icon-handbag"></i>
+                          <i class="icon-action-undo"></i>
                         </div>
                       </div>
                       <div class="col-md-6 col-xl report-inner-card">
@@ -62,32 +88,7 @@
               </div>
             </div>
             
-          <!-- Quick Action Toolbar Starts-->
-            <div class="row quick-action-toolbar">
-              <div class="col-md-12 grid-margin">
-                <div class="card">
-                  <div class="card-header d-block d-md-flex">
-                    <h5 class="mb-0">Quick Actions</h5>
-                    <p class="ml-auto mb-0">How are your active users trending overtime?<i class="icon-bulb"></i></p>
-                  </div>
-                  <div class="d-md-flex row m-0 quick-action-btns" role="group" aria-label="Quick action buttons">
-                    <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
-                      <button type="button" class="btn px-0"> <i class="icon-user mr-2"></i> Add Client</button>
-                    </div>
-                    <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
-                      <button type="button" class="btn px-0"><i class="icon-docs mr-2"></i> Create Quote</button>
-                    </div>
-                    <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
-                      <button type="button" class="btn px-0"><i class="icon-folder mr-2"></i> Enter Payment</button>
-                    </div>
-                    <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
-                      <button type="button" class="btn px-0"><i class="icon-book-open mr-2"></i>Create Invoice</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Quick Action Toolbar Ends-->
+         
             
                 <div class="row">
               <div class="col-md-12 grid-margin stretch-card">
@@ -112,9 +113,9 @@
                         <tbody>
                           <tr>
                             <td>
-                              <img class="img-sm rounded-circle" src="images/faces/face1.jpg" alt="profile image"> Katie Holmes </td>
+                              <img class="img-sm rounded-circle" src="{% static 'images/faces/face1.jpg' %}"  alt="profile image"> Katie Holmes </td>
                             <td>$3621</td>
-                            <td><img src="images/dashboard/alipay.png" alt="alipay" class="gateway-icon mr-2"> alipay</td>
+                            <td><img src="{% static 'images/dashboard/alipay.png' %}" alt="alipay" class="gateway-icon mr-2"> alipay</td>
                             <td>04 Jun 2019</td>
                             <td>18 Jul 2019</td>
                             <td>
@@ -123,9 +124,9 @@
                           </tr>
                           <tr>
                             <td>
-                              <img class="img-sm rounded-circle" src="images/faces/face2.jpg" alt="profile image"> Minnie Copeland </td>
+                              <img class="img-sm rounded-circle" src="{% static 'images/faces/face2.jpg' %}"  alt="profile image"> Minnie Copeland </td>
                             <td>$6245</td>
-                            <td><img src="images/dashboard/paypal.png" alt="alipay" class="gateway-icon mr-2"> Paypal</td>
+                            <td><img src="{% static 'images/dashboard/paypal.png' %}" alt="alipay" class="gateway-icon mr-2"> Paypal</td>
                             <td>25 Sep 2019</td>
                             <td>07 Oct 2019</td>
                             <td>
@@ -134,9 +135,9 @@
                           </tr>
                           <tr>
                             <td>
-                              <img class="img-sm rounded-circle" src="images/faces/face3.jpg" alt="profile image"> Rodney Sims </td>
+                              <img class="img-sm rounded-circle" src="{% static 'images/faces/face3.jpg' %}" alt="profile image"> Rodney Sims </td>
                             <td>$9265</td>
-                            <td><img src="images/dashboard/alipay.png" alt="alipay" class="gateway-icon mr-2"> alipay</td>
+                            <td><img src="{% static 'images/dashboard/alipay.png' %}" alt="alipay" class="gateway-icon mr-2"> alipay</td>
                             <td>12 dec 2019</td>
                             <td>26 Aug 2019</td>
                             <td>
@@ -145,9 +146,9 @@
                           </tr>
                           <tr>
                             <td>
-                              <img class="img-sm rounded-circle" src="images/faces/face4.jpg" alt="profile image"> Carolyn Barker </td>
+                              <img class="img-sm rounded-circle" src="{% static 'images/faces/face4.jpg' %}"  alt="profile image"> Carolyn Barker </td>
                             <td>$2263</td>
-                            <td><img src="images/dashboard/alipay.png" alt="alipay" class="gateway-icon mr-2"> alipay</td>
+                            <td><img src="{% static 'images/dashboard/alipay.png' %}" alt="alipay" class="gateway-icon mr-2"> alipay</td>
                             <td>30 Sep 2019</td>
                             <td>20 Oct 2019</td>
                             <td>

@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.views.generic import View
 from django.forms import inlineformset_factory
 from django.contrib.auth.forms import  UserCreationForm
 from django.contrib import messages
@@ -7,7 +8,7 @@ from .decorators import unauthoncticated_user,allowed_users, admin_only
 from django.contrib.auth.models import Group
 # Create your views here.
 from .models import *
-from .forms import  OrderForm, CreateUserForm, CustomerForm
+from .forms import  OrderForm, CreateUserForm, CustomerForm, ProductForm, CollectionForm, CategoryForm,TagForm
 from .filters import OrderFilter
 from django.contrib.auth import authenticate,login,logout
 
@@ -19,8 +20,8 @@ def register_view(request):
         form = CreateUserForm(request.POST)
         if form.is_valid() :   
             user = form.save()
-            #group = Group.objects.get(name='customer')
-            #user.groups.add(group)
+            group = Group.objects.get(name='client')
+            user.groups.add(group)
             Customer.objects.create(user = user)
             messages.success(request, f'A new account has been created ')   
             return redirect('home')  
@@ -112,13 +113,46 @@ def home_view(request):
 
 #Products  View for super users
 @login_required(login_url='login')
-@allowed_users(allowed_roles = ['admin'])
+@allowed_users(allowed_roles = ['admin','client'])
 def products_view(request):
     products = Product.objects.all()
     context = {
         'products' : products,
     }
     return render(request, 'cms/userpages/inventory.html', context)
+
+
+
+#Create Product View 
+@login_required(login_url='login')
+@allowed_users(allowed_roles = ['admin','client'])
+def add_product (request) :
+     return render(request, 'cms/userpages/add_product.html')
+    
+#//////
+#//////
+@login_required(login_url='login')
+@allowed_users(allowed_roles = ['admin','client'])
+def add_payment (request) :
+     return render(request, 'cms/userpages/add_payment.html')
+    
+#//////
+#//////
+@login_required(login_url='login')
+@allowed_users(allowed_roles = ['admin','client'])
+def add_shippment (request) :
+     return render(request, 'cms/userpages/add_shipping.html')
+    
+#//////
+#//////
+@login_required(login_url='login')
+@allowed_users(allowed_roles = ['admin','client'])
+def add_supplier (request) :
+     return render(request, 'cms/userpages/add_supplier.html')
+    
+#//////
+#//////
+
 
 
 

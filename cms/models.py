@@ -43,7 +43,30 @@ class ShippingAddress(models.Model):
 
 	def __str__(self):
 		return self.address    
+ 
+ 
+#Collection model
+class Collection(models.Model) :
+    STATUS =(
+        ('Active', 'Active'),
+        ('Deactived', 'Deactived'),
+    )
+    name = models.CharField(max_length=200, null=True)
+    description = models.CharField(max_length=450, null=True)
+    status = models.CharField(max_length=200, null =  True, choices = STATUS)
+    image = models.ImageField( null=True, blank= True)
     
+    def __str__(self):
+        return self.name
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = ''
+        return url 
+    
+  
 #Category model
 class Category(models.Model) :
     STATUS =(
@@ -97,7 +120,11 @@ class Product(models.Model):
         
     )
     name = models.CharField(max_length=200, null =  True)
+    vendor = models.CharField(max_length=200, null =  True)
+    productType = models.CharField(max_length=200, null =  True)
     description = models.CharField(max_length=400, null =  True, blank = True)
+    quantity = models.IntegerField(default=0)
+    hs = models.CharField(max_length=200, null =  True)
     date_created = models.DateTimeField(auto_now_add = True, null =  True)
     digital = models.BooleanField(default=False,null=True, blank=True)
     status = models.CharField(max_length=200, null =  True, choices = STATUS)
@@ -108,6 +135,7 @@ class Product(models.Model):
     discount = models.FloatField(null= True)
     image = models.ImageField(null=True, blank=True)
     category = models.ManyToManyField(Category)
+    collection = models.ManyToManyField(Collection)
     tags = models.ManyToManyField(Tag)
     
     def __str__(self):
@@ -135,8 +163,7 @@ class Supplier(models.Model):
     )
     product = models.ManyToManyField(Product)
     address = models.ForeignKey(Address, on_delete=models.SET_NULL, null=True)
-    paymentmethod = models.ForeignKey(Paymentmethod, null = True, on_delete= models.SET_NULL)
-    
+    paymentmethod = models.ForeignKey(Paymentmethod, null = True, on_delete= models.SET_NULL) 
     name = models.CharField(max_length=200, null=False)
     email = models.EmailField(max_length=200, null=False)
     phone = models.CharField(max_length=200, null=False)

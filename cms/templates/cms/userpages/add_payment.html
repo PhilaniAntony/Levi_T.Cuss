@@ -1,0 +1,188 @@
+{% extends 'cms/index.html' %}
+{% load static %}
+{% block content %}
+<div class="main-panel">
+    <div class="content-wrapper">
+        <!-- Quick Action Toolbar Starts-->
+         <a href="{% url 'products' %}" type="button" class="btn px-0"><i class="icon-arrow-left mr-2"></i> Products</a>
+        <h3 class="display-3">Add Payment</h3>
+        <div class="row quick-action-toolbar">
+            
+            <div class="col-8 grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <form class="forms-sample">
+                      <div class="form-group">
+                        <label for="exampleInputName1">Title</label>
+                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputName1">Size</label>
+                        <input type="text" class="form-control" id="exampleInputName1" placeholder="size">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputName1">Color</label>
+                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Color">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleTextarea1">Description</label>
+                        <textarea class="form-control" id="exampleTextarea1" rows="4"  placeholder="Product Description"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleTextarea1">Note</label>
+                        <textarea class="form-control" id="exampleTextarea1" rows="4" placeholder="Product Note"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label>Product Image</label>
+                        <input type="file" name="img[]" class="file-upload-default">
+                        <div class="input-group col-xs-12">
+                          <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                          <span class="input-group-append">
+                            <button class="file-upload-browse btn btn-outline-primary" type="button">Upload</button>
+                          </span>
+                        </div>
+                      </div>
+                    
+                    </form>
+                   </div>
+                </div>
+                <div class="card">
+                
+                        <div class="card-body">
+                        <h4 class="display-4">Pricing</h4>
+                          <form class="forms-sample">
+                      <div class="form-group">
+                      <label>Unit Price</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text text-black">$</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                        <div class="input-group-append">
+                          <span class="input-group-text">.00</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Discount</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text text-black">$</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                        <div class="input-group-append">
+                          <span class="input-group-text">.00</span>
+                        </div>
+                      </div>
+                    </div>
+                    </form>
+                        </div>
+                    </div> 
+                
+                </div>
+                
+            
+        <div class="col-4 grid-margin">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="display-4">Product Availability</h4>
+                    <p class="card-description"> Available on 1 of 1 Channels  </p>
+                    <hr />
+                    <a href="{% url 'products' %}" type="button" class="btn px-0"> Store <i class="icon-handbag ml-3"></i></a>
+                </div>
+            </div>
+            <div class="card">
+               <div class="card-body">
+                <h4 class="display-4">Organisations</h4>
+                <form class="forms-sample">
+                      <div class="form-group">
+                        <label for="exampleInputName1">Product Type </label>
+                        <input type="text" class="form-control" id="exampleInputName1" placeholder="eg tshirt">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputName1">Vendor</label>
+                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Nike">
+                      </div>
+                    </form>
+                <hr />
+                <form class="forms-sample">
+                      <div class="form-group">
+                        <label for="exampleInputName1">Collection </label>
+                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Collection">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputName1">Category</label>
+                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Nike">
+                      </div>
+                    </form>
+                    <hr />
+                <form class="forms-sample">
+                      <div class="form-group">
+                        <label for="exampleInputName1">Tags </label>
+                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Collection">
+                      </div>
+
+                    </form>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="display-5">Product Variant</h4>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input">Is the products Available in different sizes and color </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        </div>
+     <div class="row quick-action-toolbar">
+        <div class="col-8 grid-margin">
+            <div class="card">
+               <div class="card-body">
+                <h4 class=" display-4">Shipping</h4>
+                <form class="forms-sample">
+                      <div class="form-group">
+                       <label for="exampleInputName1">Weight </label>
+                      <div class="input-group">
+                        <input type="text" class="form-control" aria-label="weight">
+                        <div class="input-group-append">
+                          <span class="input-group-text">kg</span>
+                        </div>
+                      </div>
+                    </div>
+            
+                    </form>
+                <hr />
+                <form class="forms-sample">
+                      <div class="form-group">
+                        <label >Country </label>
+                         <select class="js-example-basic-single" style="width:100%">
+                        <option value="AL">Alabama</option>
+                        <option value="WY">Wyoming</option>
+                        <option value="AM">America</option>
+                        <option value="CA">Canada</option>
+                        <option value="RU">Russia</option>
+                      </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputName1">HSI Code (Harmonised System)</label>
+                        <input type="text" class="form-control" id="exampleInputName1" placeholder="HSI">
+                      </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+        
+     </div>       
+    </div>
+    <!-- content-wrapper ends -->
+    <!-- partial:partials/_footer.html -->
+    {% include 'cms/partials/footer.html' %}
+    <!-- partial -->
+</div>
+{% endblock  %}
